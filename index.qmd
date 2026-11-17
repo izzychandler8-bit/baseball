@@ -2,4 +2,6 @@
 title: "Baseball History in Data"
 ---
 
-Welcome! This site explores the rich history of Major League Baseball through its statistics, using historical data from the [Lahman Baseball Database](https://sabr.org/lahman-database/). Follow along as we uncover trends in hitting, pitching, and team performance across the eras of the game.
+This site explores the history of Major League Baseball since 1871 using the [Lahman Baseball Database](https://sabr.org/lahman-database/), focusing on how power hitting has evolved across more than a century and a half of play. Looking at league-wide totals first reveals sharp, misleading drops during players' strikes and the COVID-shortened 2020 season—but once we measure home runs *per game*, those shortened seasons sit right on the historical curve, highlighting a dramatic rise from the dead-ball era to the modern long-ball game.
+
+Zooming in from league trends to individual hitters tells a matching story: more than half of MLB's top 15 all-time career home-run leaders played during the 1994–2009 steroid era, topped by Barry Bonds and his extraordinary late-career surge to 73 home runs in 2001. Use the navigation bar above to explore the full **Home runs** and **Sluggers** analysis pages.
