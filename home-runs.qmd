@@ -9,18 +9,54 @@ library(Lahman)
 ```
 
 ```{r}
-Teams |>
+#| cache: true
+shortened_years <- c(1918, 1919, 1981, 1994, 1995, 2020)
+
+hr_by_season <- Teams |>
   group_by(yearID) |>
   summarize(
     total_hr = sum(HR),
-    total_games = sum(G)
+    total_games = sum(G),
+    hr_per_game = total_hr / total_games
   ) |>
-  ggplot(aes(x = yearID, y = total_hr)) +
-  geom_line() +
+  mutate(
+    season_type = if_else(
+      yearID %in% shortened_years,
+      "Shortened season",
+      "Full season"
+    )
+  )
+```
+
+```{r}
+hr_by_season |>
+  ggplot(aes(x = yearID, y = hr_per_game)) +
+  geom_line(color = "gray75") +
+  geom_point(aes(color = season_type), size = 2) +
+  scale_color_manual(
+    values = c(
+      "Full season" = "#4e79a7",
+      "Shortened season" = "#e15759"
+    )
+  ) +
+  theme_minimal() +
   labs(
-    title = "Total MLB Home Runs by Season",
+    title = "MLB Home Run Rate Over Time (1871–Present)",
+    subtitle = "Shortened seasons fit right in on a per-game basis",
     x = "Season",
-    y = "Total Home Runs",
-    caption = "Source: Lahman Baseball Database"
+    y = "Home Runs per Team-Game",
+    color = "Schedule",
+    caption = "Source: Lahman Baseball Database (WWI/post-WWI: 1918–19; strikes: 1981, 1994–95; COVID-19: 2020)"
+  )
+```
+
+```{r}
+Teams |>
+  filter(yearID %in% c(1981, 1994, 2019, 2020)) |>
+  group_by(yearID) |>
+  summarize(
+    total_hr = sum(HR),
+    total_games = sum(G),
+    hr_per_game = total_hr / total_games
   )
 ```
