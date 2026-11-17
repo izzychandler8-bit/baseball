@@ -1,0 +1,26 @@
+---
+title: "Home runs"
+---
+
+```{r}
+#| message: false
+library(tidyverse)
+library(Lahman)
+```
+
+```{r}
+Teams |>
+  group_by(yearID) |>
+  summarize(
+    total_hr = sum(HR),
+    total_games = sum(G)
+  ) |>
+  ggplot(aes(x = yearID, y = total_hr)) +
+  geom_line() +
+  labs(
+    title = "Total MLB Home Runs by Season",
+    x = "Season",
+    y = "Total Home Runs",
+    caption = "Source: Lahman Baseball Database"
+  )
+```
