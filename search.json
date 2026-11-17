@@ -1,0 +1,16 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Baseball History in Data",
+    "section": "",
+    "text": "This site explores the history of Major League Baseball since 1871 using the Lahman Baseball Database, focusing on how power hitting has evolved across more than a century and a half of play. Looking at league-wide totals first reveals sharp, misleading drops during players’ strikes and the COVID-shortened 2020 season—but once we measure home runs per game, those shortened seasons sit right on the historical curve, highlighting a dramatic rise from the dead-ball era to the modern long-ball game.\nZooming in from league trends to individual hitters tells a matching story: more than half of MLB’s top 15 all-time career home-run leaders played during the 1994–2009 steroid era, topped by Barry Bonds and his extraordinary late-career surge to 73 home runs in 2001. Use the navigation bar above to explore the full Home runs and Sluggers analysis pages."
+  },
+  {
+    "objectID": "home-runs.html",
+    "href": "home-runs.html",
+    "title": "Home runs",
+    "section": "",
+    "text": "Warning: Removed 1 row containing missing values or values outside the scale range\n(`geom_point()`).\n\n\n\n\n\n\n\n\n\n\n\n# A tibble: 4 × 4\n  yearID total_hr total_games hr_per_game\n   &lt;int&gt;    &lt;int&gt;       &lt;int&gt;       &lt;dbl&gt;\n1   1981     1781        2788       0.639\n2   1994     3306        3200       1.03 \n3   2019     6776        4858       1.39 \n4   2020     2304        1796       1.28"
+  }
+]
